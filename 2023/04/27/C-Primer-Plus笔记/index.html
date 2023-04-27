@@ -27,7 +27,7 @@
 <meta property="og:description" content="C++ Primer Plus笔记复合类型共用体共用体(union)是一种数据格式，它能够存储不同的数据类型，但只能同时存储其中的一种类型。 声明举例 123456union one4all&amp;#123;    int int_val;    long long_val;    double double_val;&amp;#125;;  匿名共用体(anonymous union)没有名称，其成员将成为位">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-04-27T12:01:37.000Z">
-<meta property="article:modified_time" content="2023-04-27T12:05:41.727Z">
+<meta property="article:modified_time" content="2023-04-27T12:40:27.798Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 
@@ -191,7 +191,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2023-04-27 20:01:37 / Modified: 20:05:41" itemprop="dateCreated datePublished" datetime="2023-04-27T20:01:37+08:00">2023-04-27</time>
+      <time title="Created: 2023-04-27 20:01:37 / Modified: 20:40:27" itemprop="dateCreated datePublished" datetime="2023-04-27T20:01:37+08:00">2023-04-27</time>
     </span>
 
   
@@ -210,7 +210,7 @@
 
 <p>匿名共用体(anonymous union)没有名称，其成员将成为位于相同地址处的变量。显然，每次只有一个成员是当前的变量。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">widget</span>&#123;</span><br><span class="line">    <span class="type">char</span> brand[<span class="number">20</span>];</span><br><span class="line">    <span class="type">int</span> type;</span><br><span class="line">    <span class="keyword">union</span>&#123;</span><br><span class="line">        <span class="type">long</span> id_num;</span><br><span class="line">        <span class="type">char</span> id_char[<span class="number">20</span>];</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    widget prize;</span><br><span class="line">    cin &gt;&gt; prize.type;</span><br><span class="line">    <span class="keyword">if</span>(prize.type == <span class="number">1</span>)  cin &gt;&gt; prize.id_num;</span><br><span class="line">    <span class="keyword">else</span>   cin &gt;&gt; prize.id_char;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<span id="more"></span>
 <h3 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h3><p>C++的enum工具提供了另一种创建符号常量的方式，enum的语法与结构类似</p>
 <p>eg:</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> <span class="title class_">spectrum</span>&#123;red, orange, yellow, green, blue, violet, indigo, ultraviolet&#125;;</span><br><span class="line">spectrum brand;</span><br><span class="line">brand=  blue;</span><br><span class="line"><span class="keyword">enum</span> <span class="title class_">bits</span>&#123;one = <span class="number">1</span>, twwo = <span class="number">2</span>, four = <span class="number">4</span>, eight = <span class="number">8</span>&#125;;</span><br></pre></td></tr></table></figure>
